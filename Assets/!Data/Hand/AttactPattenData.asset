@@ -1,0 +1,358 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a020282b4c6a10b4ead1bb3d2566447e, type: 3}
+  m_Name: AttactPattenData
+  m_EditorClassIdentifier: 
+  AttactPattenPairs:
+  - Floor: 0
+    LeftHandPatten: 1
+    LeftDelayTime: 0.5
+    LeftLocalPosition: {x: -38.4, y: -16}
+    RightHandPatten: 0
+    RightDelayTime: 0
+    RightLocalPosition: {x: 0, y: 0}
+  - Floor: 0
+    LeftHandPatten: 0
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: 0}
+    RightHandPatten: 1
+    RightDelayTime: 0.5
+    RightLocalPosition: {x: 36.6, y: -16}
+  - Floor: 0
+    LeftHandPatten: 1
+    LeftDelayTime: 1.5
+    LeftLocalPosition: {x: -38.4, y: -16}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 36.6, y: -16}
+  - Floor: 0
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -16}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 36.6, y: -16}
+  - Floor: 0
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -16}
+    RightHandPatten: 1
+    RightDelayTime: 1
+    RightLocalPosition: {x: 36.6, y: -2.6}
+  - Floor: 1
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -29.5}
+    RightHandPatten: 1
+    RightDelayTime: 1.5
+    RightLocalPosition: {x: 36.6, y: -14.8}
+  - Floor: 1
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -29.5}
+    RightHandPatten: 1
+    RightDelayTime: 1.5
+    RightLocalPosition: {x: 36.6, y: -14.8}
+  - Floor: 1
+    LeftHandPatten: 3
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -29.6, y: -5.3}
+    RightHandPatten: 3
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -5.3}
+  - Floor: 1
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -29.5}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 36.6, y: -29.5}
+  - Floor: 1
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -14.8}
+    RightHandPatten: 3
+    RightDelayTime: 0.5
+    RightLocalPosition: {x: 28.1, y: -5.3}
+  - Floor: 1
+    LeftHandPatten: 2
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -29.6, y: -5.3}
+    RightHandPatten: 1
+    RightDelayTime: 1.2
+    RightLocalPosition: {x: 36.6, y: -29.5}
+  - Floor: 1
+    LeftHandPatten: 2
+    LeftDelayTime: 0.5
+    LeftLocalPosition: {x: -29.6, y: -5.3}
+    RightHandPatten: 2
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -5.3}
+  - Floor: 1
+    LeftHandPatten: 3
+    LeftDelayTime: 0.5
+    LeftLocalPosition: {x: -29.6, y: -5.3}
+    RightHandPatten: 3
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -29.5}
+  - Floor: 2
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -38.5}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -38.5}
+  - Floor: 2
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -38.5}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -38.5}
+  - Floor: 2
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -53.2}
+    RightHandPatten: 3
+    RightDelayTime: 1
+    RightLocalPosition: {x: 16, y: -28.6}
+  - Floor: 2
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -53.2}
+    RightHandPatten: 3
+    RightDelayTime: 1
+    RightLocalPosition: {x: 16, y: -28.6}
+  - Floor: 2
+    LeftHandPatten: 2
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -28.6}
+    RightHandPatten: 1
+    RightDelayTime: 1
+    RightLocalPosition: {x: 28.1, y: -53.2}
+  - Floor: 2
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: -30}
+    RightHandPatten: 0
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -53.2}
+  - Floor: 2
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: -27}
+    RightHandPatten: 4
+    RightDelayTime: 1
+    RightLocalPosition: {x: 0, y: -27}
+  - Floor: 2
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: -100}
+    RightHandPatten: 4
+    RightDelayTime: 1
+    RightLocalPosition: {x: 0, y: -100}
+  - Floor: 2
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.4, y: -53.2}
+    RightHandPatten: 4
+    RightDelayTime: 1
+    RightLocalPosition: {x: 0, y: -30}
+  - Floor: 2
+    LeftHandPatten: 4
+    LeftDelayTime: 1
+    LeftLocalPosition: {x: 0, y: -30}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -38.5}
+  - Floor: 3
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: -100}
+    RightHandPatten: 0
+    RightDelayTime: 0
+    RightLocalPosition: {x: 28.1, y: -38.5}
+  - Floor: 3
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: -100}
+    RightHandPatten: 4
+    RightDelayTime: 1
+    RightLocalPosition: {x: 28.1, y: -100}
+  - Floor: 3
+    LeftHandPatten: 0
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: -100}
+    RightHandPatten: 2
+    RightDelayTime: 0
+    RightLocalPosition: {x: 38.4, y: -15.6}
+  - Floor: 3
+    LeftHandPatten: 0
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: 0, y: -100}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 30.6, y: -61.7}
+  - Floor: 3
+    LeftHandPatten: 2
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -33.3, y: -54.4}
+    RightHandPatten: 0
+    RightDelayTime: 0
+    RightLocalPosition: {x: 30.6, y: -61.7}
+  - Floor: 3
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -35.1, y: -33.4}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 32.6, y: -52.3}
+  - Floor: 4
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.9, y: -22.9}
+    RightHandPatten: 0
+    RightDelayTime: 1
+    RightLocalPosition: {x: 37.08, y: -22.98}
+  - Floor: 4
+    LeftHandPatten: 2
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.9, y: -17.9}
+    RightHandPatten: 2
+    RightDelayTime: 1
+    RightLocalPosition: {x: 37.08, y: -17.9}
+  - Floor: 4
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.9, y: -100}
+    RightHandPatten: 4
+    RightDelayTime: 0.5
+    RightLocalPosition: {x: 0, y: 0}
+  - Floor: 4
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.9, y: -6.7}
+    RightHandPatten: 4
+    RightDelayTime: 0.5
+    RightLocalPosition: {x: 0, y: -100}
+  - Floor: 5
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.66, y: 1.5}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 37.11, y: 1.5}
+  - Floor: 5
+    LeftHandPatten: 0
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.66, y: 1.5}
+    RightHandPatten: 3
+    RightDelayTime: 0
+    RightLocalPosition: {x: 22.7, y: 10.3}
+  - Floor: 5
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.66, y: -100}
+    RightHandPatten: 4
+    RightDelayTime: 1
+    RightLocalPosition: {x: 22.7, y: -100}
+  - Floor: 5
+    LeftHandPatten: 3
+    LeftDelayTime: 1
+    LeftLocalPosition: {x: -24.6, y: 10.3}
+    RightHandPatten: 4
+    RightDelayTime: 0
+    RightLocalPosition: {x: 22.7, y: -100}
+  - Floor: 5
+    LeftHandPatten: 3
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -24.6, y: 10.3}
+    RightHandPatten: 3
+    RightDelayTime: 1
+    RightLocalPosition: {x: 22.7, y: 10.3}
+  - Floor: 5
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.66, y: 10.3}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 37.11, y: 10.3}
+  - Floor: 6
+    LeftHandPatten: 1
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.8, y: -12.2}
+    RightHandPatten: 0
+    RightDelayTime: 0
+    RightLocalPosition: {x: 36.3, y: -12.2}
+  - Floor: 6
+    LeftHandPatten: 0
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.8, y: -12.2}
+    RightHandPatten: 1
+    RightDelayTime: 0
+    RightLocalPosition: {x: 36.3, y: -12.2}
+  - Floor: 6
+    LeftHandPatten: 3
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -26.1, y: 11.7}
+    RightHandPatten: 3
+    RightDelayTime: 0.5
+    RightLocalPosition: {x: 22.9, y: 11.7}
+  - Floor: 6
+    LeftHandPatten: 3
+    LeftDelayTime: 1
+    LeftLocalPosition: {x: -26.1, y: 11.7}
+    RightHandPatten: 3
+    RightDelayTime: 0
+    RightLocalPosition: {x: 36.3, y: -12.2}
+  - Floor: 6
+    LeftHandPatten: 2
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.8, y: -9.3}
+    RightHandPatten: 2
+    RightDelayTime: 0
+    RightLocalPosition: {x: 37.11, y: -9.3}
+  - Floor: 6
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -38.8, y: -100}
+    RightHandPatten: 4
+    RightDelayTime: 0.3
+    RightLocalPosition: {x: 37.11, y: -100}
+  - Floor: 6
+    LeftHandPatten: 4
+    LeftDelayTime: 0.2
+    LeftLocalPosition: {x: -38.8, y: -100}
+    RightHandPatten: 4
+    RightDelayTime: 0
+    RightLocalPosition: {x: 37.11, y: -100}
+  - Floor: 6
+    LeftHandPatten: 3
+    LeftDelayTime: 0.5
+    LeftLocalPosition: {x: -38.8, y: 11.7}
+    RightHandPatten: 4
+    RightDelayTime: 0
+    RightLocalPosition: {x: -1.9, y: 20}
+  - Floor: 6
+    LeftHandPatten: 4
+    LeftDelayTime: 0.5
+    LeftLocalPosition: {x: 0, y: 20}
+    RightHandPatten: 3
+    RightDelayTime: 0
+    RightLocalPosition: {x: 37.1, y: -10}
+  - Floor: 6
+    LeftHandPatten: 4
+    LeftDelayTime: 0
+    LeftLocalPosition: {x: -9, y: 20}
+    RightHandPatten: 4
+    RightDelayTime: 0
+    RightLocalPosition: {x: 9, y: 20}

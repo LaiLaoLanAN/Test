@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3edb94da6d84f9645a44fc8a1a1e829a, type: 3}
+  m_Name: MusicData
+  m_EditorClassIdentifier: 
+  musicTracks:
+  - trackName: "\u9003\u79BB"
+    clip: {fileID: 8300000, guid: b6edd281fd3c58d49abeef4fe2503972, type: 3}
+    volume: 100
+    loop: 1
+  - trackName: "\u5165\u7F6A"
+    clip: {fileID: 8300000, guid: aba00465f5e9a424f8eeb055ec800d8f, type: 3}
+    volume: 100
+    loop: 1
+  - trackName: "\u6740\u4EBA\u8BDB\u5FC3"
+    clip: {fileID: 8300000, guid: 81fab0b3c71e6224c8b86b86dd55c7fb, type: 3}
+    volume: 100
+    loop: 1
+  - trackName: "\u8001\u6821"
+    clip: {fileID: 8300000, guid: 05060530e558ce04a9d7c0d665b97f4e, type: 3}
+    volume: 100
+    loop: 1
+  - trackName: "\u8F7B\u7235\u58EB"
+    clip: {fileID: 8300000, guid: 48deb15071810f94f87507741ffbe394, type: 3}
+    volume: 100
+    loop: 1
+  - trackName: "\u9ED1\u7235\u58EB"
+    clip: {fileID: 8300000, guid: e6bd0fe5300627849a1ccd7bb90bce19, type: 3}
+    volume: 100
+    loop: 1
+  - trackName: "\u4E1C\u4EAC"
+    clip: {fileID: 8300000, guid: 669229eebe2d7714999c5e386d48ded8, type: 3}
+    volume: 100
+    loop: 1
+  - trackName: "\u5F7B\u591C"
+    clip: {fileID: 8300000, guid: 2b0716dca7e028a44b386f16ecb5608b, type: 3}
+    volume: 100
+    loop: 1

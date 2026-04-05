@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Apple
+  - Banana
+  - Terrin
+  - Weapon
+  - Broad
+  - DieThing
+  - WaterMelon
+  - Bubble
+  - Orange
+  - Key
+  - Mist
+  - DemonHand
+  - DemonBroad
+  - LastDemonBroad
+  - Platform
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - UI2
+  - Leaves
+  - WaterMelon
+  - Player
+  - BITE
+  - Weapons
+  - "\u200BInteractable"
+  - Enemy
+  - BananaShoot
+  - DemonHand
+  - EmptyGround
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: background
+    uniqueID: 126228135
+    locked: 0
+  - name: terrin
+    uniqueID: 3749358579
+    locked: 0
+  - name: MC&Enemy
+    uniqueID: 400659717
+    locked: 0
+  - name: UI2
+    uniqueID: 3558000821
+    locked: 0
+  - name: UI
+    uniqueID: 850118705
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
