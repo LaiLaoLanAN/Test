@@ -15,7 +15,7 @@ public class MCRightFoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RIsGround=Physics2D.Raycast(transform.position,Vector2.down,isGroundCheck,LayerMask.GetMask("Ground"))||Physics2D.Raycast(transform.position,Vector2.down,isGroundCheck,LayerMask.GetMask("EmptyGround"));
+        RIsGround=Physics2D.Raycast(transform.position,Vector2.down,isGroundCheck,LayerMask.GetMask("Ground"))||Physics2D.Raycast(transform.position,Vector2.down,isGroundCheck,LayerMask.GetMask("EmptyGround")) || Physics2D.Raycast(transform.position, Vector2.down, isGroundCheck, LayerMask.GetMask("TimeInteractable"));
     }
     private void OnDrawGizmos(){
         Gizmos.DrawLine(transform.position,new Vector2(transform.position.x,transform.position.y-isGroundCheck));

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 886625622653613091}
   - component: {fileID: 9152863102290057622}
   - component: {fileID: 145222936863405362}
-  - component: {fileID: 6021646194535933717}
   m_Layer: 13
   m_Name: Key
   m_TagString: Key
@@ -201,15 +200,3 @@ MonoBehaviour:
   ShootCD: 2
   KeyRing: {fileID: 1737638131708511294, guid: 1d4ee2d16c7bbf4488c2088155d34c2c, type: 3}
   KeyRingAcceleration: 10
---- !u!114 &6021646194535933717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5540411377711370702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94542c9b4b0c45842b12b447fdb94bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -38,16 +38,16 @@ public class APPLE : MonoBehaviour,IUpable,IDamagableE
     // Update is called once per frame
     void Update()
     {
-        float timeRate = TimeManager.Instance.TimeRate;
-        if (timeRate < 1)
-        {
-            rb.velocity = Vector2.zero;
-            return;
-        }
-        else if(timeRate>1)
-        {
-            transform.position += (Vector3)(rb.velocity * (timeRate - 1) * Time.deltaTime);
-        }
+        //float timeRate = TimeManager.Instance.TimeRate;
+        //if (timeRate < 1)
+        //{
+        //    rb.velocity = Vector2.zero;
+        //    return;
+        //}
+        //else if(timeRate>1)
+        //{
+        //    transform.position += (Vector3)(rb.velocity * (timeRate - 1) * Time.deltaTime);
+        //}
         IsGround=Physics2D.Raycast(transform.position,Vector2.down,isGroundCheckapple,LayerMask.GetMask("Ground"));
 
         

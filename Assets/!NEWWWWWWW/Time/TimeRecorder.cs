@@ -17,16 +17,16 @@ public class TimeRecorder : MonoBehaviour
     }
     void Update()
     {
-        if (timeManager.TimeRate > 0)
-        {
-            timeRecords.Push(new TimeRecord { position = transform.position, time = timeManager.CurrentTime });
-        }
-        else
-        {
-            while (timeManager.CurrentTime < timeRecords.Peek().time)
-            {
-                transform.position = timeRecords.Pop().position;
-            }
-        }
+        //if (timeManager.TimeRate > 0)
+        //{
+        //    timeRecords.Push(new TimeRecord { position = transform.position, time = timeManager.CurrentTime });
+        //}
+        //else
+        //{
+        //    while (timeManager.CurrentTime < timeRecords.Peek().time)
+        //    {
+        //        transform.position = timeRecords.Pop().position;
+        //    }
+        //}
     }
 }
