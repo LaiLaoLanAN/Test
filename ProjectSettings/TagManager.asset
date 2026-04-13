@@ -18,7 +18,6 @@ TagManager:
   - DemonHand
   - DemonBroad
   - LastDemonBroad
-  - Platform
   layers:
   - Default
   - TransparentFX

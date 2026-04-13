@@ -1630,11 +1630,11 @@ GameObject:
   - component: {fileID: 551842375}
   - component: {fileID: 551842374}
   - component: {fileID: 551842373}
+  - component: {fileID: 551842378}
   - component: {fileID: 551842372}
   - component: {fileID: 551842371}
   - component: {fileID: 551842376}
   - component: {fileID: 551842377}
-  - component: {fileID: 551842378}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
