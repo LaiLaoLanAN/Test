@@ -126,79 +126,65 @@ public class MCscript : MonoBehaviour,IUpable
             IsDashing=false;
         }
 
-        if (!TimeManager.Instance.IsTimeReversing)
+        if (IsGround == true)
         {
-            if (IsGround == true)
+            if (Movecontroller == 0)
             {
-                if (Movecontroller == 0)
+                if (Math.Abs(rb.velocity.x) < 0.3f)
                 {
-                    if (Math.Abs(rb.velocity.x) < 0.3f)
-                    {
-                        rb.velocity = new Vector2(0, rb.velocity.y);
-                    }
-                    else
-                    {
-                        rb.velocity -= new Vector2(2f * Accelerationspeed * Time.deltaTime * Xdirection, 0);
-                    }
-                }
-                if (IsDashing)
-                {
-                    rb.velocity -= new Vector2(15 * Accelerationspeed * Xdirection * Time.deltaTime, 0);
+                    rb.velocity = new Vector2(0, rb.velocity.y);
                 }
                 else
                 {
-                    if (Movecontroller != 0 && Movecontroller + Xdirection == 0 || Math.Abs(Xspeed) <= Movespeed)
-                    {
-                        rb.velocity += new Vector2(10 * Accelerationspeed * Movecontroller * Time.deltaTime, 0);
-                    }
-
-                    if ((Math.Abs(Xspeed) > Movespeed) && Movecontroller == Xdirection)
-                    {
-                        rb.velocity = new Vector2(Movecontroller * Movespeed, rb.velocity.y);
-                    }
+                    rb.velocity -= new Vector2(2f * Accelerationspeed * Time.deltaTime * Xdirection, 0);
                 }
+            }
+            if (IsDashing)
+            {
+                rb.velocity -= new Vector2(15 * Accelerationspeed * Xdirection * Time.deltaTime, 0);
             }
             else
             {
-                if (Movecontroller == 0)
-                {                                                                        //移动
-                    if (Math.Abs(rb.velocity.x) < 0.3f)
-                    {
-                        rb.velocity = new Vector2(0, rb.velocity.y);
-                    }
-                    else
-                    {
-                        rb.velocity -= new Vector2(0.4f * Accelerationspeed * Time.deltaTime * Xdirection, 0);
-                    }
-                }
-                if (IsDashing)
+                if (Movecontroller != 0 && Movecontroller + Xdirection == 0 || Math.Abs(Xspeed) <= Movespeed)
                 {
-                    rb.velocity -= new Vector2(5 * Accelerationspeed * Xdirection * Time.deltaTime, 0);
-                }
-                else
-                {
-                    if (Movecontroller != 0 && Movecontroller + Xdirection == 0 || Math.Abs(Xspeed) <= Movespeed)
-                    {
-                        rb.velocity += new Vector2(5 * Accelerationspeed * Movecontroller * Time.deltaTime, 0);
-                    }
-                    if ((Math.Abs(Xspeed) > Movespeed) && Movecontroller == Xdirection)
-                    {
-                        rb.velocity = new Vector2(Movecontroller * Movespeed, rb.velocity.y);
-                    }
+                    rb.velocity += new Vector2(10 * Accelerationspeed * Movecontroller * Time.deltaTime, 0);
                 }
 
+                if ((Math.Abs(Xspeed) > Movespeed) && Movecontroller == Xdirection)
+                {
+                    rb.velocity = new Vector2(Movecontroller * Movespeed, rb.velocity.y);
+                }
             }
         }
         else
         {
-            if (Math.Abs(rb.velocity.x) < 0.3f)
+            if (Movecontroller == 0)
+            {                                                                        //移动
+                if (Math.Abs(rb.velocity.x) < 0.3f)
+                {
+                    rb.velocity = new Vector2(0, rb.velocity.y);
+                }
+                else
+                {
+                    rb.velocity -= new Vector2(0.4f * Accelerationspeed * Time.deltaTime * Xdirection, 0);
+                }
+            }
+            if (IsDashing)
             {
-                rb.velocity = new Vector2(0, rb.velocity.y);
+                rb.velocity -= new Vector2(5 * Accelerationspeed * Xdirection * Time.deltaTime, 0);
             }
             else
             {
-                rb.velocity -= new Vector2(5f * Accelerationspeed * Time.deltaTime * Xdirection, 0);
+                if (Movecontroller != 0 && Movecontroller + Xdirection == 0 || Math.Abs(Xspeed) <= Movespeed)
+                {
+                    rb.velocity += new Vector2(5 * Accelerationspeed * Movecontroller * Time.deltaTime, 0);
+                }
+                if ((Math.Abs(Xspeed) > Movespeed) && Movecontroller == Xdirection)
+                {
+                    rb.velocity = new Vector2(Movecontroller * Movespeed, rb.velocity.y);
+                }
             }
+
         }
 
         Xspeed=rb.velocity.x; 
@@ -265,7 +251,7 @@ public class MCscript : MonoBehaviour,IUpable
 
         }
         state=Anim.wait;
-        if(Movecontroller!=0&&!TimeManager.Instance.IsTimeReversing){
+        if(Movecontroller!=0){
             state=Anim.run;
         }
         if(!IsGround){
@@ -311,25 +297,27 @@ public class MCscript : MonoBehaviour,IUpable
 
 
 
-        if (!IsInPlatform && (LF.LPlatForm != null || RF.RPlatForm != null))
+        if (!IsInPlatform && (LF.LPlatForm != null || RF.RPlatForm != null)&&Movecontroller==0)
         {
             IsInPlatform = true;
             Collider2D plat = LF.LPlatForm != null ? LF.LPlatForm : RF.RPlatForm;
             currentPlatform = plat.transform;
-            PlatformLastPos = currentPlatform.position;
-            ScaleRate = 1f;
+            //PlatformLastPos = currentPlatform.position;
+            transform.parent = currentPlatform;
+            ScaleRate = 1/currentPlatform.localScale.x;
         }
-        else if (IsInPlatform && (LF.LPlatForm == null && RF.RPlatForm == null))
+        else if (IsInPlatform && ((LF.LPlatForm == null && RF.RPlatForm == null)||Movecontroller!=0))
         {
+            ScaleRate = 1;
             IsInPlatform = false;
             currentPlatform = null;
-            ScaleRate = 1f;
+            transform.parent = null;
         }
-        if (currentPlatform != null)
-        {
-            transform.position += (currentPlatform.position - PlatformLastPos);
-            PlatformLastPos = currentPlatform.position;
-        }
+        //if (currentPlatform != null)
+        //{
+        //    transform.position += (currentPlatform.position - PlatformLastPos);
+        //    PlatformLastPos = currentPlatform.position;
+        //}
 
     }
     private void Jump()
