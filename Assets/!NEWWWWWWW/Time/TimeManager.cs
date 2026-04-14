@@ -10,6 +10,7 @@ public class TimeManager : MonoBehaviour
     private RaycastHit2D MouseHit;
     private RaycastHit2D LastMouseHit;
     private RaycastHit2D PressedMouseHit;
+    public bool IsTimeReversing;
     public static TimeManager Instance { get; private set; }
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class TimeManager : MonoBehaviour
                     if (timeControlable != null)
                     {
                         timeControlable.ChangeCurrentTime(-Time.deltaTime);
+                        IsTimeReversing = true;
                     }
                 }
                 else if (Input.GetKey(KeyCode.E))
@@ -52,13 +54,23 @@ public class TimeManager : MonoBehaviour
                     if (timeControlable != null)
                     {
                         timeControlable.ChangeCurrentTime(Time.deltaTime);
+                        IsTimeReversing = true;
                     }
                 }
+                else
+                {
+                    IsTimeReversing = false;
+                }
+            }
+            else
+            {
+                IsTimeReversing = false;
             }
         }
         else
         {
             MouseHit = Physics2D.Raycast(mouseWorldPos, Vector2.zero, DetectmaxDistance, TimeLayer);
+            IsTimeReversing = false;
         }
         if (LastMouseHit.collider == null)
         {

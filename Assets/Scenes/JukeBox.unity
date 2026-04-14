@@ -850,7 +850,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &446596031
 SpriteRenderer:
@@ -1001,7 +1001,6 @@ MonoBehaviour:
   IsDead: 0
   RebirthInvincibleTime: 8
   Hexagram: {fileID: 1320134833}
-  PlatformLastPos: {x: 0, y: 0, z: 0}
   MCcollider: {fileID: 778814836}
   MCshade: {fileID: 4861853867144397971, guid: c1277776290ee6b409561b6c39b17c7f, type: 3}
   JumpMaxNum: 8
@@ -1708,6 +1707,7 @@ MonoBehaviour:
   TimeLayer:
     serializedVersion: 2
     m_Bits: 131072
+  IsTimeReversing: 0
 --- !u!1 &599811600
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,7 +3951,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 790532710695093694, guid: 82b75652d38e2bd48ba043fcb3b5573b, type: 3}
       propertyPath: EndPos.x
-      value: -100
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 2150040993373006723, guid: 82b75652d38e2bd48ba043fcb3b5573b, type: 3}
       propertyPath: m_LocalPosition.x
