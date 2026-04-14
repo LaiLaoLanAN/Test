@@ -70,6 +70,7 @@ public class MCscript : MonoBehaviour,IUpable
     public float RebirthInvincibleTime;
     public GameObject Hexagram;
     [Header("其他玩意的调用")]
+    public Transform PlatformTransform=null;
     public Vector3 PlatformLastPos;
     public MCCollider MCcollider;
     public GameObject MCshade;
@@ -77,9 +78,6 @@ public class MCscript : MonoBehaviour,IUpable
 
     private int JumpNum = 0;
     public int JumpMaxNum;
-
-    public float ScaleRate=1;
-    public bool IsInPlatform=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -183,48 +181,37 @@ public class MCscript : MonoBehaviour,IUpable
         else if(IsJumping && Time.time-JumpTime<JumpAddTime){
             rb.velocity+=new Vector2(0,18f*Time.deltaTime);
         }
-        else if(!IsGround){
+        else{
             rb.velocity-=new Vector2(0,33f*Time.deltaTime);
             IsJumping=false;
         }
 
 
-
-        if (Input.GetKeyDown(KeyCode.J))
+        NeededClickTime=InMist?0f:OriginClickTime*(1-eatscore/MaxScore/3f);
+        if (inputManager.GetMouseDownInGame(0)&&!BeatManager.Instance.IsInBeatOnlyRead() && Time.time - inputManager.LastKeyDownTime < inputManager.ExtraMouseWindowTime)
         {
-            //KeyCode keyCode = inputManager.LastKeyCode;   //还没实现，以后做冲刺攻击和跳跃攻击用
-            GenerateShade();
             Openmouth = true;
             Closemouth = true;
             LastClickTime = Time.time;
+        }
+        else
+        {
+            if (inputManager.GetMouseDownInGame(0))
+            {
+                //KeyCode keyCode = inputManager.LastKeyCode;   //还没实现，以后做冲刺攻击和跳跃攻击用
+                GenerateShade();
+                Openmouth = true;
+                Closemouth = true;
+                LastClickTime = Time.time;
+            }
         }                                                                                 //咬合
 
-        if (Input.GetKeyUp(KeyCode.J))
+        if (inputManager.GetMouseUpInGame(0))
         {
             Openmouth = false;
         }
 
-        if(!IsInPlatform&&(LF.LPlatForm!=null || RF.RPlatForm!=null))
-        {
-            IsInPlatform = true;
-            if (LF.LPlatForm != null)
-            {
-                transform.parent = LF.LPlatForm.transform;
-                ScaleRate = 1 / LF.LPlatForm.transform.localScale.x;
 
-            }
-            else
-            {
-                transform.parent =RF.RPlatForm.transform;
-                ScaleRate = 1 / RF.RPlatForm.transform.localScale.x;
-            }
-        }
-        else if(IsInPlatform && (LF.LPlatForm == null && RF.RPlatForm == null))
-        {
-            IsInPlatform=false;
-            transform.parent = null;
-            ScaleRate = 1;
-        }
 
         if (IsGround){
             Candash=true;
@@ -235,22 +222,22 @@ public class MCscript : MonoBehaviour,IUpable
         if(IsDashing){
             float dashcal=(Math.Abs(Xspeed)-Movespeed)/(dashspeed-Movespeed);
             if(10-2*dashcal>2f){
-            transform.localScale= ScaleRate*new Vector2(dashdirection*(10+3*dashcal),10-2*dashcal);
+            transform.localScale=new Vector2(dashdirection*(10+3*dashcal),10-2*dashcal);
             }
             else{
-                transform.localScale= ScaleRate*new Vector2(dashdirection*(10+3*dashcal),2);
+                transform.localScale=new Vector2(dashdirection*(10+3*dashcal),2);
             }
         }
         else {
             if (Math.Abs(Xspeed)>=Movespeed-0.3f){                 //行动时的角色缩放变换,在想改IsDashing时，还要改1/-1的dashdirection
             LocalScaleLock=Xdirection;
-            transform.localScale= ScaleRate*new Vector2(10*LocalScaleLock,10);
+            transform.localScale=new Vector2(10*LocalScaleLock,10);
             }
             else if(Math.Abs(Xspeed)<=0.3f){
-                transform.localScale= ScaleRate*new Vector2(10*LocalScaleLock,10);
+                transform.localScale=new Vector2(10*LocalScaleLock,10);
             }
             else if(Xdirection!=0 && LocalScaleLock+Xdirection==0){
-                transform.localScale = ScaleRate*new Vector2(-10*Xdirection+20*(Xspeed/Movespeed),10);
+                transform.localScale = new Vector2(-10*Xdirection+20*(Xspeed/Movespeed),10);
             }
 
         }
@@ -297,6 +284,11 @@ public class MCscript : MonoBehaviour,IUpable
                 MoreScoreEvent.Invoke(_score);
             }
             eatscore=MaxScore;
+        }
+        if (PlatformTransform != null)
+        {
+            transform.position += (PlatformTransform.position - PlatformLastPos);
+            PlatformLastPos = PlatformTransform.position;
         }
     }
     private void Jump()

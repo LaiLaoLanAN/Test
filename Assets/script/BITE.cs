@@ -43,7 +43,7 @@ public class BITE : MonoBehaviour
     void Update()
     {
         transform.position=new Vector2(MC.transform.position.x,MC.transform.position.y+2f);
-        IsFacingRight = MC.rb.velocity.x > 0;
+        IsFacingRight = MC.MouseAngle > 0;
         transform.localEulerAngles = new Vector3(0, 0, IsFacingRight ? 270 : 90);
         //if (MC.eatthing!=3){
         //    transform.localEulerAngles=new Vector3(0,0,-MC.MouseAngle);
