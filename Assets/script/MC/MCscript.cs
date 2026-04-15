@@ -12,7 +12,7 @@ public class MCscript : MonoBehaviour,IUpable
     public Rigidbody2D rb;
     public Animator anim;
     private SpriteRenderer spriteRenderer;
-    private float Movecontroller;
+    public float Movecontroller;
     public float OringinMoveSpeed;
     public float Movespeed;
     [SerializeField]private float Accelerationspeed;

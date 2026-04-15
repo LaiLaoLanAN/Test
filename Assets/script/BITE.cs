@@ -43,7 +43,14 @@ public class BITE : MonoBehaviour
     void Update()
     {
         transform.position=new Vector2(MC.transform.position.x,MC.transform.position.y+2f);
-        IsFacingRight = MC.rb.velocity.x > 0;
+        if (MC.Movecontroller != 0)
+        {
+            IsFacingRight=MC.Movecontroller == 1;
+        }
+        else
+        {
+            IsFacingRight=MC.LocalScaleLock > 0;
+        }
         transform.localEulerAngles = new Vector3(0, 0, IsFacingRight ? 270 : 90);
         //if (MC.eatthing!=3){
         //    transform.localEulerAngles=new Vector3(0,0,-MC.MouseAngle);
@@ -68,7 +75,12 @@ public class BITE : MonoBehaviour
         float rate=1;
         List<Collider> results = new List<Collider>();
         Collider2D[] colliders = Physics2D.OverlapAreaAll(PC2D.bounds.min,PC2D.bounds.max);
+        List<GameObject> result = new List<GameObject>();
         foreach(Collider2D col in colliders){
+            if(result.Contains(col.gameObject)){
+                return;
+            }
+            result.Add(col.gameObject);
             if (col!=PC2D){
                 GameObject obj=col.gameObject;
                 if(obj.tag=="Bubble"&&obj.GetComponent<Bubble>().CanBite){
@@ -82,6 +94,11 @@ public class BITE : MonoBehaviour
                 IDamagableE iDamagableE=obj.GetComponent<IDamagableE>();
                 if(iDamagableE!=null){
                     iDamagableE.DieOut();
+                }
+                Enemy enemy=obj.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(1, MC.transform);
                 }
                 //if(obj.tag=="Apple"){
                 //    Assigneatthing(1);
